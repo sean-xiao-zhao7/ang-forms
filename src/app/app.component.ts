@@ -13,8 +13,14 @@ export class AppComponent {
   genders: string[] = ['Male', 'Female'];
 
   suggestUserName() {
-    const suggestedName = 'Superuser';
+    this.form.form.patchValue({
+      personalInfoGroup: {
+        username: 'My Name',
+      },
+    });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.form.reset();
+  }
 }
